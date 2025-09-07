@@ -128,28 +128,28 @@ const WorkoutLog = ({ onNavigate }) => {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-dark-bg p-4 pb-20">
+    <div className="min-h-screen bg-gray-50 dark:bg-dark-bg p-3 pb-20 sm:p-4">
       <div className="max-w-4xl mx-auto">
         <motion.div
-          className="mb-6"
+          className="mb-4 sm:mb-6"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <h1 className="text-2xl font-bold text-gray-800 dark:text-dark-text-primary dark:text-dark-text-primary mb-2">Workout Log</h1>
-          <p className="text-gray-600 dark:text-dark-text-secondary">Track your exercises and earn XP!</p>
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-800 dark:text-dark-text-primary mb-2">Workout Log</h1>
+          <p className="text-sm sm:text-base text-gray-600 dark:text-dark-text-secondary">Track your exercises and earn XP!</p>
         </motion.div>
 
         {!isWorkoutActive ? (
           <motion.div
-            className="bg-white dark:bg-dark-surface rounded-xl p-8 text-center shadow-sm border dark:border-dark-border"
+            className="bg-white dark:bg-dark-surface rounded-xl p-6 sm:p-8 text-center shadow-sm border dark:border-dark-border"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
           >
-            <div className="w-20 h-20 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Play className="w-10 h-10 text-indigo-600" />
+            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Play className="w-8 h-8 sm:w-10 sm:h-10 text-indigo-600" />
             </div>
-            <h2 className="text-xl font-bold text-gray-800 dark:text-dark-text-primary dark:text-dark-text-primary mb-2">Ready to Work Out?</h2>
-            <p className="text-gray-600 dark:text-dark-text-secondary mb-6">
+            <h2 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-dark-text-primary mb-2">Ready to Work Out?</h2>
+            <p className="text-sm sm:text-base text-gray-600 dark:text-dark-text-secondary mb-4 sm:mb-6">
               Start a new workout session to begin logging exercises and earning XP!
             </p>
             <motion.button

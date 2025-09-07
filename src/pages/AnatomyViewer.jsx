@@ -144,11 +144,11 @@ const AnatomyViewer = ({ onNavigate }) => {
         </div>
       </Header>
 
-      <div className="max-w-4xl mx-auto p-4">
-        <div className="flex gap-6 items-start justify-center">
+      <div className="max-w-4xl mx-auto p-3 sm:p-4">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start justify-center">
           {/* Anatomy Model */}
           <motion.div
-            className="bg-white dark:bg-dark-surface rounded-xl shadow-sm border dark:border-dark-border overflow-hidden flex-shrink-0"
+            className="bg-white dark:bg-dark-surface rounded-xl shadow-sm border dark:border-dark-border overflow-hidden flex-shrink-0 w-full sm:w-auto mx-auto"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
           >

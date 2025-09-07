@@ -2,19 +2,16 @@ import { motion } from 'framer-motion';
 import { Calendar, Target, Flame, Award, Plus, TrendingUp } from 'lucide-react';
 import { useUser } from '../context/UserContext';
 import { useWorkout } from '../context/WorkoutContext';
-import { useBodyPart } from '../context/BodyPartContext-simple';
 import { useQuests } from '../hooks/useQuests';
 import { useXP } from '../hooks/useXP';
 import Avatar from '../components/Avatar';
 import ProgressBar from '../components/ProgressBar';
 import QuestCard from '../components/QuestCard';
-import BodyModel3DSimple from '../components/BodyModel3D-simple';
 import SwasthiLogo from '../components/SwasthiLogo';
 
 const Dashboard = ({ onNavigate }) => {
   const { user } = useUser();
   const { workoutHistory, calculateWorkoutStats } = useWorkout();
-  const { selectedBodyPart, bodyPartLevels, selectBodyPart, getBodyPartStats } = useBodyPart();
   const { activeQuests, questProgress, getUnclaimedRewards } = useQuests();
   const { getProgressToNextLevel } = useXP();
 
@@ -24,7 +21,6 @@ const Dashboard = ({ onNavigate }) => {
   const levelProgress = getProgressToNextLevel(user.xp, user.level);
   const unclaimedRewards = getUnclaimedRewards();
   const featuredQuests = activeQuests.slice(0, 3);
-  const bodyPartStats = getBodyPartStats();
 
   const quickStats = [
     {
@@ -72,28 +68,28 @@ const Dashboard = ({ onNavigate }) => {
   const todayMessage = motivationalMessages[Math.floor(Date.now() / (1000 * 60 * 60 * 24)) % motivationalMessages.length];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-dark-bg p-4 pb-20">
-      <div className="max-w-4xl mx-auto space-y-6">
+    <div className="min-h-screen bg-gray-50 dark:bg-dark-bg p-3 pb-20 sm:p-4">
+      <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6">
         <motion.div
-          className="bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-700 dark:to-purple-700 rounded-2xl p-6 text-white shadow-2xl"
+          className="bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-700 dark:to-purple-700 rounded-2xl p-4 sm:p-6 text-white shadow-2xl"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center space-x-3">
-              <SwasthiLogo className="w-10 h-10 flex-shrink-0" />
-              <div>
-                <h1 className="text-2xl font-bold">Welcome back, {user.name}!</h1>
-                <p className="text-indigo-200">{todayMessage}</p>
+          <div className="flex items-center justify-between mb-3 sm:mb-4">
+            <div className="flex items-center space-x-2 sm:space-x-3 min-w-0 flex-1">
+              <SwasthiLogo className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0" />
+              <div className="min-w-0">
+                <h1 className="text-lg sm:text-2xl font-bold truncate">Welcome back, {user.name}!</h1>
+                <p className="text-indigo-200 text-xs sm:text-sm">{todayMessage}</p>
               </div>
             </div>
-            <Avatar level={user.level} xp={user.xp} className="flex-shrink-0" />
+            <Avatar level={user.level} xp={user.xp} className="flex-shrink-0 ml-2" />
           </div>
           
-          <div className="bg-white/20 rounded-lg p-4">
+          <div className="bg-white/20 rounded-lg p-3 sm:p-4">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium">Level {user.level}</span>
-              <span className="text-sm">
+              <span className="text-xs sm:text-sm font-medium">Level {user.level}</span>
+              <span className="text-xs sm:text-sm">
                 {levelProgress.current} / {levelProgress.required} XP
               </span>
             </div>
