@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import humanBodyFrontImg from '/human-body-front-view.png';
-import humanBodyBackImg from '/human-body-back-view_1.png';
+import humanBodyFrontImg from '../assets/images/human-body-front-view.png';
+import humanBodyBackImg from '../assets/images/human-body-back-view_1.png';
 
 const AnatomySVGPro = ({ view = 'front', onMuscleSelect, selectedMuscle }) => {
   const [hoveredMuscle, setHoveredMuscle] = useState(null);
