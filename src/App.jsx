@@ -28,7 +28,7 @@ const NavigationBar = ({ currentPage, onNavigate }) => {
 
   return (
     <motion.nav
-      className="fixed bottom-0 left-0 right-0 bg-white dark:bg-dark-surface border-t border-gray-200 dark:border-dark-border px-4 py-2 z-40 backdrop-blur-lg"
+      className="fixed bottom-0 left-0 right-0 bg-white dark:bg-dark-surface border-t border-gray-200 dark:border-dark-border px-3 py-1 sm:px-4 sm:py-2 z-40 backdrop-blur-lg"
       initial={{ y: 100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
@@ -39,19 +39,19 @@ const NavigationBar = ({ currentPage, onNavigate }) => {
             <button
               key={item.id}
               onClick={() => onNavigate(item.id)}
-              className={`flex flex-col items-center space-y-1 p-2 rounded-lg transition-colors ${
+              className={`flex flex-col items-center space-y-0.5 p-1.5 sm:p-2 sm:space-y-1 rounded-lg transition-colors ${
                 currentPage === item.id
                   ? 'text-indigo-500 bg-indigo-50 dark:bg-indigo-900/30 dark:text-indigo-400'
                   : 'text-gray-600 dark:text-dark-text-secondary hover:text-indigo-600 dark:hover:text-indigo-400'
               }`}
             >
-              <item.icon className="w-5 h-5" />
+              <item.icon className="w-4 h-4 sm:w-5 sm:h-5" />
               <span className="text-xs font-medium">{item.label}</span>
             </button>
           ))}
         </div>
         
-        <div className="ml-4">
+        <div className="ml-2 sm:ml-4">
           <ThemeToggle />
         </div>
       </div>

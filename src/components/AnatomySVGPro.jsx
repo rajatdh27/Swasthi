@@ -31,6 +31,7 @@ const AnatomySVGPro = ({ view = 'front', onMuscleSelect, selectedMuscle }) => {
             src={humanBodyFrontImg} 
             alt="Human Body Front View" 
             className="w-auto h-auto max-w-full max-h-[600px]"
+            style={{ filter: 'brightness(1) contrast(1.1) saturate(0.9)' }}
             onClick={() => onMuscleSelect?.(null)}
           />
         ) : (
@@ -38,6 +39,7 @@ const AnatomySVGPro = ({ view = 'front', onMuscleSelect, selectedMuscle }) => {
             src={humanBodyBackImg} 
             alt="Human Body Back View" 
             className="w-auto h-auto max-w-full max-h-[600px]"
+            style={{ filter: 'brightness(1) contrast(1.1) saturate(0.9)' }}
             onClick={() => onMuscleSelect?.(null)}
           />
         )}
