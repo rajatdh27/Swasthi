@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
+  <defs>
+    <radialGradient id="miniGojo" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#1E40AF" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="16" cy="16" r="14" fill="url(#miniGojo)" opacity="0.2"/>
+  
+  <!-- Main 'S' -->
+  <path d="M10,8 Q8,6 10,4 Q12,2 16,4 Q18,6 16,8 Q14,10 12,12 Q10,14 12,16 Q14,18 16,20 Q18,22 16,24 Q12,26 10,24 Q8,22 10,20" 
+        fill="url(#miniGojo)" opacity="0.9"/>
+        
+  <!-- Small energy dots -->
+  <circle cx="8" cy="10" r="1" fill="#8B5CF6"/>
+  <circle cx="24" cy="22" r="1" fill="#6366F1"/>
+</svg>
