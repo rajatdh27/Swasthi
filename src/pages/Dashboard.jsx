@@ -68,7 +68,7 @@ const Dashboard = ({ onNavigate }) => {
   const todayMessage = motivationalMessages[Math.floor(Date.now() / (1000 * 60 * 60 * 24)) % motivationalMessages.length];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-dark-bg p-3 pb-20 sm:p-4">
+    <div className="min-h-screen bg-gray-50 dark:bg-dark-bg p-3 pb-24 sm:p-4 sm:pb-28 overflow-y-auto">
       <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6">
         <motion.div
           className="bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-700 dark:to-purple-700 rounded-2xl p-4 sm:p-6 text-white shadow-2xl"

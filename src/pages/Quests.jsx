@@ -77,7 +77,7 @@ const Quests = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-dark-bg p-4 pb-20">
+    <div className="min-h-screen bg-gray-50 dark:bg-dark-bg p-4 pb-24 sm:pb-28 overflow-y-auto">
       <div className="max-w-4xl mx-auto space-y-6">
         <motion.div
           className="text-center"

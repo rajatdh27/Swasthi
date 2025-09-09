@@ -128,7 +128,7 @@ const WorkoutLog = ({ onNavigate }) => {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-dark-bg p-3 pb-20 sm:p-4">
+    <div className="min-h-screen bg-gray-50 dark:bg-dark-bg p-3 pb-24 sm:p-4 sm:pb-28 overflow-y-auto">
       <div className="max-w-4xl mx-auto">
         <motion.div
           className="mb-4 sm:mb-6"

@@ -111,7 +111,7 @@ const AnatomyViewer = ({ onNavigate }) => {
   const selectedMuscleInfo = selectedBodyPart ? muscleInfo[selectedBodyPart] : null;
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-dark-bg">
+    <div className="min-h-screen bg-gray-50 dark:bg-dark-bg pb-24 sm:pb-28 overflow-y-auto">
       {/* Header */}
       <Header 
         title="Sharir Rachana" 
